@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color:   #ffffff;
+    font-family: sans-serif;
+}
+
+
+/* header section */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #eca226;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.logo {
+    padding: 1em;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 3em;
+    padding: 1em;
+}
+
+
+
+.nav-item {
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 0.8em;
+    background-color: #ec8214;
+    border: 3px solid #171717;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+
+.nav-item:hover, .nav-col-btn:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.nav-item:active, .nav-col-btn:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+
+
+
+
+/* main section */
+
+.nav-col {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    padding: 2em;
+    gap: 0.4em;
+    background-color: #faf4ee;
+    margin-top: 5%;
+    border: 1px solid #777777;
+    border-radius: 0px 6px 6px 0;
+}
+
+.filter {
+    font-weight: 600;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3em;
+    width: inherit;
+}
+
+.input-price {
+    width: 40%;
+}
+
+.input-pages {
+    width: 40%;
+}
+
+.input-desc {
+    margin-bottom: 10%;
+}
+
+input {
+    flex: 1;
+    padding: 0.3em;
+    border: 1px solid #777777;
+    border-radius: 4px;
+}
+
+.nav-col-btn {
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 0.8em;
+    background-color: #faf4ee;
+    border: 3px solid #171717;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+
+
+
+
+/* footer section */
+
+.footer {
+    background-color: #171717;
+    font-weight: 900;
+    font-size: 0.8em;
+    color: #faf4ee;
+    text-align: center;
+    position: fixed;
+    padding: 1em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
