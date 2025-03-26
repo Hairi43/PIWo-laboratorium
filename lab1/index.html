@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <p class="logo">Księgarnia <br>Dobra Książka</p>
+        <nav class="nav">
+            <button class="nav-item">Logowanie</button>
+            <button class="nav-item">Wylogowanie</button>
+            <button class="nav-item">Dodaj Pozycję</button>
+            <button class="nav-item">Koszyk</button>
+        </nav>
+    </header>
+    <main class="main">
+        <nav class="nav-col">
+            <p class="filter">Filtry</p>
+            <label for="input-author">Autor książki</label>
+            <input type="text" class="input-author">
+            
+            <label for="input-cover">Typ okładki</label>
+            <section class="input-group">
+                <label for="input-cover">miękka</label>
+                <input type="checkbox" class="input-cover">
+                <label for="input-cover">twarda</label>
+                <input type="checkbox" class="input-cover">
+            </section>
+            <!-- price -->
+            <label for="input-price">Cena</label>
+                <section class="input-group">
+                <input type="text" class="input-price" placeholder="od" min="0" max="10000" step="any">
+                <p>-</p>
+                <input type="text" class="input-price" placeholder="do" min="0" max="10000" step="any">
+            </section>
+            <!-- pages -->
+            <label for="input-pages">Ilość stron</label>
+            <section class="input-group">
+                <input type="text" class="input-pages" placeholder="od" min="0" max="10000" step="1">
+                <p>-</p>
+                <input type="text" class="input-pages" placeholder="do" min="0" max="10000" step="1">
+            </section>
+            <!-- words in book -->
+            <label for="input-desc">Słowo w opisie</label>
+            <input type="text" class="input-desc">
+
+            <!-- button -->
+            <button class="nav-col-btn">Filtruj</button>
+
+        </nav>
+        <section class="box-main">
+            <!-- <section class="box">
+                <img src="" alt="" class="image">
+                <section class="box-desc">
+                    <title class="book-title"></title>
+                    <p class="book-desc"></p>
+                </section>
+            <!--              -->
+
+            <section class="book-tile">
+                <img src="" alt="Okładka książki" class="book-image">
+                <section class="book-info">
+                    <section class="book-title">Tytuł Książki</section>
+                    <section class="book-author">Autor: Jan Kowalski</section>
+                    <esction class="book-description">Krótki opis książki, który zachęci do jej zakupu...</section>
+                    <section class="book-price">Cena: 39,99 zł</section>
+                    <section class="book-pages">Liczba stron: 320</section>
+                    <button class="nav-col-btn">Dodaj do koszyka</button>
+                </section>
+            </section>
+            <section class="box"></section>
+            <section class="box"></section>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Dawid Łapiński 272782 @ 2025 @ Księgarnia Dobra Książka</p>
+    </footer>
+</body>
+</html>
