@@ -76,7 +76,7 @@ const toggleList = (id) => {
             list.style.display = "flex";
         }
     }
-}
+};
 
 
 
@@ -121,7 +121,7 @@ const addTask = () => {
     list.appendChild(taskWrapper);
 
     input.value = "";
-}
+};
 
 
 const toggleDone = (taskWrapper) => {
@@ -151,7 +151,7 @@ const toggleDone = (taskWrapper) => {
         li.style = "color: black;";
         li.firstChild.style = "text-decoration: none;";
     }
-}
+};
 
 
 
