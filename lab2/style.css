@@ -150,18 +150,6 @@ main {
 }
 
 
-/* .modal-background {
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    /* background-color: #bbbbbb; */
-    /* z-index: 1; */
-/* }  */
-
 #modal {
     display: block;
     top: 50%;
@@ -173,9 +161,6 @@ main {
     border: 0.3em solid #171717;
 }
 
-/* .modal > p {
-
-} */
 
 
 /* footer section */
