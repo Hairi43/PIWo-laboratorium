@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <main>
+      <section class="main">
+        <h1>TODO</h1>
+        <section class="menu-wrapper">
+          <section class="add-task">
+              <input class="input" id="new-task-input" type="text" placeholder="Nowe zadanie:">
+              <button class="btn" onclick="addTask()">Dodaj</button>
+          </section>
+          <section class="choose-list">
+              <select name="available-lists" id="available-lists" required>
+                  <!-- dodać kod z JS, który aktualizuje listę -->
+                  <option hidden>Wybierz listę - wymagane</option>
+              </select>
+          </section>
+          <section class="add-task">
+            <input class="input" id="new-list-input" type="text" placeholder="Nowa lista:">
+            <button class="btn" onclick="addList()">Dodaj</button>
+          </section>
+          <section class="search-wrapper">
+              <section class="search">
+                  <input id="search" class="input" type="text" oninput="filterlists()" placeholder="Szukaj zadania:">
+              </section>
+              <section class="search">
+              <input type="checkbox" class="input-checkbox" id="caseInsensitive"> nie uwzględniaj wielkości liter
+            </section>
+            <p>note: operacja cofnięcia jest pod Ctrl + z</p>
+          </section>
+        </section>
+        <section class="lists-wrapper">
+          <section id="lists">
+          </section>
+        </section>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Dawid Łapiński 272782 @ 2025 @ ToDo app</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
