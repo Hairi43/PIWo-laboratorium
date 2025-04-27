@@ -1,0 +1,45 @@
+export default function HandleFilterChange(filters) {
+    setFilters(filters);
+
+    if (
+      filters.author === "" &&
+      filters.coverType === "" &&
+      filters.priceFrom === "" &&
+      filters.priceTo === "" &&
+      filters.pagesFrom === "" &&
+      filters.pagesTo === "" &&
+      filters.description === ""
+    ) {
+      setFilteredBooks(bookList);
+      return;
+    }
+  
+    const filteredBooks = bookList.filter((book) => {
+      const price = parseFloat(book.price);
+      const pageCount = parseInt(book.pageCount);
+  
+      const matchAuthor =
+        filters.author === "" ||
+        book.author?.toLowerCase().includes(filters.author.toLowerCase());
+  
+      const matchCover =
+        filters.coverType === "" ||
+        book.coverType?.toLowerCase() === filters.coverType;
+  
+      const matchPrice =
+        (filters.priceFrom === "" || price >= parseFloat(filters.priceFrom)) &&
+        (filters.priceTo === "" || price <= parseFloat(filters.priceTo));
+  
+      const matchPages =
+        (filters.pagesFrom === "" || pageCount >= parseInt(filters.pagesFrom)) &&
+        (filters.pagesTo === "" || pageCount <= parseInt(filters.pagesTo));
+  
+      const matchDescription =
+        filters.description === "" ||
+        book.description?.toLowerCase().includes(filters.description.toLowerCase());
+  
+      return matchAuthor && matchCover && matchPrice && matchPages && matchDescription;
+    });
+  
+    setFilteredBooks(filteredBooks);
+  };
