@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><p class="logo">Księgarnia <br>Dobra Książka</p></a>
+        <nav class="nav">
+            <button class="nav-item">Logowanie</button>
+            <button class="nav-item">Wylogowanie</button>
+            <button class="nav-item">Dodaj Pozycję</button>
+            <button class="nav-item">Koszyk</button>
+        </nav>
+    </header>
+    <main class="main">
+        <nav class="nav-col">
+            <p class="filter">Filtry</p>
+            <label for="input-author">Autor książki</label>
+            <input type="text" class="input-author">
+            
+            <label for="input-cover">Typ okładki</label>
+            <section class="input-group">
+                <label for="input-cover">miękka</label>
+                <input type="checkbox" value="soft" class="input-cover">
+                <label for="input-cover">twarda</label>
+                <input type="checkbox" value="hard" class="input-cover">
+            </section>
+            <!-- price -->
+            <label for="input-price">Cena</label>
+                <section class="input-group">
+                <input type="text" class="input-price" placeholder="od" min="0" max="10000" step="any">
+                <p>-</p>
+                <input type="text" class="input-price" placeholder="do" min="0" max="10000" step="any">
+            </section>
+            <!-- pages -->
+            <label for="input-pages">Ilość stron</label>
+            <section class="input-group">
+                <input type="text" class="input-pages" placeholder="od" min="0" max="10000" step="1">
+                <p>-</p>
+                <input type="text" class="input-pages" placeholder="do" min="0" max="10000" step="1">
+            </section>
+            <!-- words in book -->
+            <label for="input-description">Słowo w opisie</label>
+            <input type="text" class="input-desc">
+
+            <!-- button -->
+            <button class="nav-col-btn">Filtruj</button>
+        </nav>
+
+        <!-- listing of books -->
+        <section class="book-listing">
+            <section class="book-tile">
+                <img src="book1.jpg" alt="Okładka książki" class="book-image">
+                <section class="book-info">
+                    <section class="book-title">Dziecko Odyna</section>
+                    <section class="book-author">Siri Petersen</section>
+                    <section class="book-description">Wyobraź sobie, że brakuje ci czegoś, co mają wszyscy inni. 
+                        Czegoś, co stanowi dowód na to, że należysz do tego świata. 
+                        Czegoś tak ważnego, że bez tego jesteś nikim. Jesteś zarazą. Mitem.</section>
+                    <section class="book-price">Cena: <p class="book-price" id="book-price">39,99</p> zł</section>
+                    <section class="book-pages">Liczba stron: <p class="book-pages" id="book-pages-count">648</p></section>
+                    <section class="book-cover">Typ okładki: <p class="book-cover">twarda</p></section>
+                    <button class="nav-col-btn">Dodaj do koszyka</button>
+                </section>
+            </section>
+            <section class="book-tile">
+                <img src="book2.jpg" alt="Okładka książki" class="book-image">
+                <section class="book-info">
+                    <section class="book-title">Zgnilizna</section>
+                    <section class="book-author">Siri Petersen</section>
+                    <section class="book-description">Wyobraź sobie, że zostałeś wygnany do nieznanego świata. 
+                        Bez tożsamości. Bez rodziny. Bez pieniędzy. 
+                        I powoli zaczynasz sobie uświadamiać, kim tak naprawdę jesteś.</section>
+                    <section class="book-price">Cena: <p class="book-price" id="book-price">26.99</p>zł</section>
+                    <section class="book-pages">Liczba stron: <p class="book-pages" id="book-pages-count">528</p></section>
+                    <section class="book-cover">Typ okładki: <p class="book-cover">miękka</p></section>
+                    <button class="nav-col-btn">Dodaj do koszyka</button>
+                </section>
+            </section>
+            <section class="book-tile">
+                <img src="book3.jpg" alt="Okładka książki" class="book-image">
+                <section class="book-info">
+                    <section class="book-title">Evna</section>
+                    <section class="book-author">Siri Petersen</section>
+                    <section class="book-description">Wyobraź sobie, że jesteś ikoną siejącego postrach ludu.
+                        Symbolem, który go skupia wokół nienawiści i żądzy zemsty.
+                        Że jesteś córką martwo urodzonego wodza na wygnaniu i twój los wyznacza początek końca.</section>
+                    <section class="book-price">Cena: <p class="book-price" id="book-price"> 34.99</p> zł</section>
+                    <section class="book-pages">Liczba stron: <p class="book-pages" id="book-pages-count"> 648</p></section>
+                    <section class="book-cover">Typ okładki: <p class="book-cover">miękka</p></section>
+                    <button class="nav-col-btn">Dodaj do koszyka</button>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Dawid Łapiński 272782 @ 2025 @ Księgarnia Dobra Książka</p>
+    </footer>
+</body>
+</html>

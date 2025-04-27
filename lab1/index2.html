@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><p class="logo">Księgarnia <br>Dobra Książka</p></a>
+        <nav class="nav">
+            <button class="nav-item">Logowanie</button>
+            <button class="nav-item">Wylogowanie</button>
+            <button class="nav-item">Dodaj Pozycję</button>
+            <button class="nav-item">Koszyk</button>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="form-container">
+            <h2>Dodaj Książkę</h2>
+            <form class="add-book-form">
+                <section class="form-box">
+                    <label for="title">Tytuł książki:</label>
+                    <input type="text" class="title" name="title" required>
+                </section>
+                <section class="form-box">
+                    <label for="author">Autor:</label>
+                    <input type="text" class="author" name="author" required>
+                </section>
+                <section class="form-box">
+                    <label for="price">Cena (zł):</label>
+                    <input type="number" class="price" name="price" min="0" step="0.01" required>
+                </section>
+                <section class="form-box">
+                    <label for="pages">Liczba stron:</label>
+                    <input type="number" class="pages" name="pages" min="1" required>
+                </section>
+                <section class="form-box">
+                    <label for="cover">Typ okładki:</label>
+                    <select class="cover" name="cover" required>
+                        <option value="soft">Miękka</option>
+                        <option value="hard">Twarda</option>
+                    </select>
+                </section>
+                <section class="form-box">
+                    <label for="description">Opis książki:</label>
+                    <textarea class="description" name="description" required></textarea>
+                </section>
+                <section class="form-box">
+                    <label for="image">Okładka książki:</label>
+                    <input type="file" class="image" name="image" accept="image/*" required>
+                </section>
+                <section class="form-box">
+                    <button type="submit" class="nav-item">Dodaj książkę</button>
+                </section>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>@ 2025 @ Księgarnia Dobra Książka</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color:   #ffffff;
+    font-family: sans-serif;
+}
+
+
+/* header section */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #eca226;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.header > a {
+    text-decoration: none;
+    color: #171717;
+}
+
+.logo {
+    padding: 1em;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 3em;
+    padding: 1em;
+}
+
+
+
+.nav-item {
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 0.8em;
+    background-color: #ec8214;
+    border: 3px solid #171717;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+.nav-item a{
+    text-decoration: none;
+    color:#171717;
+}
+
+.nav-item:hover, .nav-col-btn:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.nav-item:active, .nav-col-btn:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+
+
+
+
+/* navigation and filters section */
+
+.nav-col {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    max-height: 22em;
+    padding: 2em;
+    gap: 0.4em;
+    background-color: #faf4ee;
+    /* margin-top: 5%; */
+    border: 1px solid #777777;
+    border-radius: 0px 6px 6px 0;
+}
+
+.filter {
+    font-weight: 600;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3em;
+    width: inherit;
+}
+
+.input-price {
+    width: 40%;
+}
+
+.input-pages {
+    width: 40%;
+}
+
+.input-description {
+    margin-bottom: 10%;
+}
+
+.nav-col input {
+    flex: 1;
+    padding: 0.3em;
+    border: 1px solid #777777;
+    border-radius: 4px;
+}
+
+.nav-col-btn {
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 0.8em;
+    background-color: #faf4ee;
+    border: 3px solid #171717;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+
+
+/* book listings */
+
+.main {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #faf4ee; */
+    margin-top: 3%;
+    margin-bottom: 10%;
+    gap: 4em;
+}
+
+.book-listing {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1em;
+    margin-right: 5%;
+}
+
+.book-tile {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid #171717;
+    border-radius: 0.3em;
+    padding: 2em;
+    gap: 2em;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.book-info > .nav-col-btn {
+    max-width: 15em;
+}
+
+.book-image {
+    width: 10em;
+}
+
+.book-title {
+    font-weight: 600;
+}
+
+.book-price, .book-pages, .book-cover {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2em;
+}
+
+
+/* page "add book" - index2.html */
+
+.form-container {
+    background-color: #faf4ee;
+    padding: 2em;
+    border: 1px solid #171717;
+    border-radius: 6px;
+    max-width: 60em;
+    margin: auto;
+    box-shadow: 2px 2px 2px 2px #171717;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.add-book-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 2em;
+    justify-content: space-between;
+}
+
+.form-box {
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.add-book-form label {
+    font-weight: bold;
+}
+
+.add-book-form input,
+.add-book-form select,
+.add-book-form textarea {
+    padding: 0.5em;
+    border: 1px solid #171717;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.add-book-form textarea {
+    resize: none;
+    height: 4em;
+}
+
+.add-book-form input:hover,
+.add-book-form select:hover,
+.add-book-form textarea:hover {
+    border-color: #ec8214;
+    box-shadow: 2px 2px 2px 2px solid #171717;
+}
+
+
+/* footer section */
+
+.footer {
+    background-color: #171717;
+    font-weight: 900;
+    font-size: 0.8em;
+    color: #faf4ee;
+    text-align: center;
+    position: fixed;
+    padding: 1em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
