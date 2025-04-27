@@ -10,7 +10,7 @@ import AddBookForm from "../Components/AddBookForm";
 export function meta() {
   return [
     { title: "Księgarnia PIWo" },
-    { name: "description", content: "Księgarnia" },
+    { name: "description", content: "Dodanie nowej książki" },
   ];
 }
 

@@ -22,10 +22,11 @@ export default function AddBookForm() {
       id: bookList.length + 1,
       title,
       author,
-      coverType: coverType === "soft" ? "miękka" : "twarda",
+      coverType,
       description,
       price,
       pageCount: pages,
+      // coverImg: image
       coverImg: image ? URL.createObjectURL(image) : null,
     };
     setBookList((prev) => prev.concat([newBook]));
@@ -36,9 +37,14 @@ export default function AddBookForm() {
     setAuthor("");
     setPrice("");
     setPages("");
-    setCoverType("soft");
+    setCoverType("");
     setDescription("");
-    setImage("");
+
+    // Przy dodawaniu książki i wybraniu okładki do niej, plik powinien zostać nadpisany przez null,
+    // ale tak się nie dzieje. Nie wiem gdzie jest błąd. Aby dodać drugą książkę trzeba wybrać inny obraz.
+    setImage(null);
+
+    console.log(image);
   };
 
   return (
@@ -49,7 +55,6 @@ export default function AddBookForm() {
           <label htmlFor="title">Tytuł książki:</label>
           <input
             type="text"
-            // id="title"
             className="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -61,7 +66,6 @@ export default function AddBookForm() {
           <label htmlFor="author">Autor:</label>
           <input
             type="text"
-            // id="author"
             className="author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
@@ -73,7 +77,6 @@ export default function AddBookForm() {
           <label htmlFor="price">Cena (zł):</label>
           <input
             type="number"
-            // id="price"
             className="price"
             min="0"
             step="0.01"
@@ -87,7 +90,6 @@ export default function AddBookForm() {
           <label htmlFor="pages">Liczba stron:</label>
           <input
             type="number"
-            // id="pages"
             className="pages"
             min="1"
             value={pages}
@@ -99,21 +101,20 @@ export default function AddBookForm() {
         <section className="form-box">
           <label htmlFor="cover">Typ okładki:</label>
           <select
-            // id="cover"
             className="cover"
             value={coverType}
             onChange={(e) => setCoverType(e.target.value)}
             required
           >
-            <option value="soft">Miękka</option>
-            <option value="hard">Twarda</option>
+          <option value="" hidden></option>
+          <option value="miękka">Miękka</option>
+          <option value="twarda">Twarda</option>
           </select>
         </section>
 
         <section className="form-box">
           <label htmlFor="description">Opis książki:</label>
           <textarea
-            // id="description"
             className="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -125,10 +126,10 @@ export default function AddBookForm() {
           <label htmlFor="image">Okładka książki:</label>
           <input
             type="file"
-            // id="image"
             className="image"
             accept="image/*"
             onChange={(e) => setImage(e.target.files[0])}
+              
             required
           />
         </section>

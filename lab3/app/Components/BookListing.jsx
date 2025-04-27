@@ -4,12 +4,6 @@ import BookTile from "./BookTile";
 import FilterBooks from "./FilterBooks";
 
 export default function BookListing({ filteredBooks }) {
-    // const { bookList } = useContext(BooksContext);
-
-
-    // console.log(`Home/filters: ${(filters)}`);
-
-
     return (
         <section className="bookListing">
             {filteredBooks.map((book) => (<BookTile key={book.id} book={book} />))}

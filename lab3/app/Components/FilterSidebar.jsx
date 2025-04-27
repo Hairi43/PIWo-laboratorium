@@ -9,24 +9,6 @@ export default function FilterSidebar({ onFilterChange }) {
   const [pagesFrom, setPagesFrom] = useState("");
   const [pagesTo, setPagesTo] = useState("");
 
-  // const handleCoverChange = (value) => {
-  //   setCoverTypes((prev) =>
-  //     prev.includes(value)
-  //       ? prev.filter((v) => v !== value)
-  //       : [...prev, value]
-  //   );
-  // };
-
-  // useEffect(() => {
-  //   onFilterChange({
-  //     author,
-  //     coverTypes,
-  //     descriptionWord,
-  //     price: { from: priceFrom, to: priceTo },
-  //     pages: { from: pagesFrom, to: pagesTo },
-  //   });
-  // }, [author, coverTypes, descriptionWord, priceFrom, priceTo, pagesFrom, pagesTo]);
-
   const handleFilter = () => {
     const filters = {
       author,
