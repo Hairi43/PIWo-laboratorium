@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useUser } from "../Services/UserService";
+import { BooksContext } from "../Contexts/BooksContext";
 
 export default function FilterSidebar({ onFilterChange }) {
   const [author, setAuthor] = useState("");
@@ -9,8 +11,12 @@ export default function FilterSidebar({ onFilterChange }) {
   const [pagesFrom, setPagesFrom] = useState("");
   const [pagesTo, setPagesTo] = useState("");
 
+  const [filters, setFilters] = useState(null);
+
+  const [showUserBooks, setShowUserBooks] = useState(false);
+
   const handleFilter = () => {
-    const filters = {
+    const filter = {
       author,
       coverType,
       priceFrom,
@@ -19,8 +25,26 @@ export default function FilterSidebar({ onFilterChange }) {
       pagesTo,
       description,
     };
-    onFilterChange(filters);
+    onFilterChange(filter);
+    // setFilters(filters);
   };
+
+  const { toggleUserBooks } = useContext(BooksContext);
+
+  const toggleUserBooksHandler = () => {
+    console.log("inside sidebar");
+    setShowUserBooks((prev) => {
+      console.log("inside prev", prev);
+      const newValue = !prev;
+      toggleUserBooks(newValue);
+      console.log("after return");
+      return newValue;
+    });
+  };
+
+
+
+  const user = useUser();
   
 
   return (
@@ -117,6 +141,12 @@ export default function FilterSidebar({ onFilterChange }) {
       <button className="filterNavBtn" onClick={handleFilter}>
         Filtruj
       </button>
+
+      {user && (
+        <button className="filterNavBtn" onClick={toggleUserBooksHandler}>
+          Moje Książki
+        </button>
+      )}
     </nav>
   );
 }

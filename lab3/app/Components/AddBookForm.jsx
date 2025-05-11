@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { BooksContext } from "../Contexts/BooksContext";
+import { addBook } from "../Services/AddBookService";
+import { useUser } from "../Services/UserService";
 
 export default function AddBookForm() {
   const {bookList, setBookList } = useContext(BooksContext);
@@ -12,6 +14,7 @@ export default function AddBookForm() {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
+  const user = useUser();
 
 
   const handleNewBook = (e) => {
@@ -19,7 +22,7 @@ export default function AddBookForm() {
     if (!title || !author || !price || !pages || !coverType || !description || !image) return;
 
     const newBook = {
-      id: bookList.length + 1,
+      // id: bookList.length + 1,
       title,
       author,
       coverType,
@@ -28,7 +31,9 @@ export default function AddBookForm() {
       pageCount: pages,
       // coverImg: image
       coverImg: image ? URL.createObjectURL(image) : null,
+      uid: user.uid,
     };
+    addBook(newBook, user); // to firestore
     setBookList((prev) => prev.concat([newBook]));
 
     console.log("Dodano książkę:", newBook);

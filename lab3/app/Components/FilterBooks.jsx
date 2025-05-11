@@ -1,4 +1,5 @@
 export default function FilterBooks(bookList, filters) {
+
     return bookList.filter((book) => {
         const price = parseFloat(book.price);
         const pageCount = parseInt(book.pageCount);
@@ -22,6 +23,8 @@ export default function FilterBooks(bookList, filters) {
         const matchDescription =
           filters.description === "" ||
           book.description?.toLowerCase().includes(filters.description.toLowerCase());
+
+          // const matchOwner = !filters.onlyMine || (user && book.uid === user.uid);
     
         return matchAuthor && matchCover && matchPrice && matchPages && matchDescription;
     });

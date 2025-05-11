@@ -140,7 +140,7 @@ body {
   /* margin-top: 5em; */
   border: 1px solid #777777;
   border-radius: 0px 6px 6px 0;
-  max-height: 25em; /* prevents author and description input expansion */
+  max-height: 27em; /* prevents author and description input expansion */
 }
 
 .filter {
