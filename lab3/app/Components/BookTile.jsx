@@ -3,11 +3,16 @@ import { firestore } from "../Services/init";
 import { useUser } from "../Services/UserService";
 import { useContext, useState } from "react";
 import { BooksContext } from "../Contexts/BooksContext";
+import FavoritesContext from "../Contexts/FavoritesContext";
 
 export default ({ book }) => {
     const user = useUser();
     const { setBookList, bookList } = useContext(BooksContext);
 
+    const { favorites, addFavorite, removeFavorite } = useContext(FavoritesContext);
+    const isFavorite = favorites.some(favBook => favBook.id === book.id);
+
+    
     const [isEditing, setIsEditing] = useState(false);
     const [editedBook, setEditedBook] = useState({ ...book });
 
@@ -73,6 +78,19 @@ export default ({ book }) => {
 
             <section className="bookInfoBtn">
                 <button className="filterNavBtn">Dodaj do koszyka</button>
+                <button
+                    className="filterNavBtn"
+                    onClick={() => {
+                        if (isFavorite) {
+                        removeFavorite(book.id);
+                        } else {
+                        addFavorite(book);
+                        }
+                    }}
+                    >
+                    {isFavorite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
+                </button>
+
                 {isOwner && !isEditing && (
                     <>
                         <button className="filterNavBtn" onClick={() => setIsEditing(true)}>Edytuj</button>

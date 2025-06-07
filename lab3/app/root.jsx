@@ -11,6 +11,8 @@ import stylesheet from "./app.css?url";
 import { BooksProvider } from "./Contexts/BooksContext";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
+import { FavoritesProvider } from "./Contexts/FavoritesContext";
+// import { FavoritesProvider } from "./Contexts/FavoritesContext.jsx";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -36,7 +38,6 @@ export function Layout({ children }) {
         <Links />
       </head>
       <body>
-        <NavBar />
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -49,7 +50,10 @@ export function Layout({ children }) {
 export default function App() {
   return (
     <BooksProvider>
-      <Outlet />
+      <FavoritesProvider>
+        <NavBar />
+        <Outlet />
+      </FavoritesProvider>
     </BooksProvider>
   );
 }
